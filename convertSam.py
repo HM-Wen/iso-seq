@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/bin/python
 
 #
 #    Convert SAM to indexed, sorted BAM file with headers
@@ -41,11 +41,11 @@ def convert(samfile, bamfile, verbose, processors, memory):
     if verbose:
         writeStatus('Sorting BAM file')
     sorted_basename = "%s.sorted" %(bamfile.split(".bam")[0])
-    cmd = "samtools sort -@ %d -m %dG %s %s" %(processors, memory,  bamfile, sorted_basename)
+    cmd = "samtools sort -@ %d -m %dG %s > %s" %(processors, memory,  bamfile, sorted_basename)
     status_sort = subprocess.call(cmd,shell=True)
     
     # mv rename sorted file
-    cmd = 'mv %s.bam %s' % ( sorted_basename, bamfile )
+    cmd = 'mv %s %s' % ( sorted_basename, bamfile )
     status_rename = subprocess.call(cmd,shell=True)
 
     # Index

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#! /usr/bin/env python
 import pysam,os,numpy,collections,subprocess
 from argparse import ArgumentParser, ArgumentTypeError
 from SpliceGrapher.formats.loader import loadGeneModels

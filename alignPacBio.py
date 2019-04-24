@@ -1,5 +1,4 @@
-# iso-seq
-#!/usr/bin/python
+#!/bin/python
 
 #
 #    Align PacBio reads to reference genome and fix indels/mismatches
